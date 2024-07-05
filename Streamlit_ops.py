@@ -112,3 +112,15 @@ start_time = st.slider('When do you start?',value=datetime.datetime(2020,1,1,9,3
 st.write('Start time:', start_time)
 st.write('Start time:', start_time.strftime('%Y-%m-%d %H:%M:%S'))''')
 st.markdown('---')
+
+#Select Slider
+st.header('Further Reading')
+st.subheader('Select Slider')
+start_color , end_color = st.select_slider('Select a range of color', options=['red', 'orange', 'yellow', 'green', 'blue', 'indigo','violet'],value=('red','blue'))
+st.write('You selected wavelengths between :', start_color, 'and', end_color)
+st.subheader('Code')
+st.code('''#Select Slider
+st.subheader('Select Slider')
+start_color , end_color = st.select_slider('Select a range of color', options=['red', 'orange', 'yellow', 'green', 'blue', 'indigo','violet'],value=('red','blue'))
+st.write('You selected wavelengths between :', start_color, 'and', end_color)''')
+st.markdown('---')
