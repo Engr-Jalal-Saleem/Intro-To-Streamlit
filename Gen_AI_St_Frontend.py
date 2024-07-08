@@ -3,6 +3,7 @@ import google.generativeai as genai
 import os
 import json
 
+<<<<<<< HEAD
 def validate_api_key(api_key):
     try:
         genai.configure(api_key=api_key)
@@ -11,6 +12,11 @@ def validate_api_key(api_key):
         return True
     except Exception as e:
         return False
+=======
+# Configure API key
+GOOGLE_API_KEY = 'Your API Key'
+genai.configure(api_key=GOOGLE_API_KEY)
+>>>>>>> 089e51a2af972bd28dc9729daa836679623007d6
 
 def get_gemini_response(user_input):
     try:
