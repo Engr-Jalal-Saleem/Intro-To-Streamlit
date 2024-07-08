@@ -4,7 +4,7 @@ import os
 import json
 
 # Configure API key
-GOOGLE_API_KEY = 'AIzaSyByfdii-u2OcV6JM8n9ctDZvP90hC1Pipg'
+GOOGLE_API_KEY = 'Your API Key'
 genai.configure(api_key=GOOGLE_API_KEY)
 
 def get_gemini_response(user_input):
