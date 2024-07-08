@@ -131,13 +131,192 @@ st.markdown('---')
 
 
 
+st.title('Day 4')
+st.header('st.line_chart')
+st.subheader("What we're building?")
+st.write('''A simple app for displaying a line chart.
 
+Flow of the app:
 
+Create a Pandas DataFrame from numbers randomly generated via NumPy.
+Create and display the line chart via st.line_chart() command.''')
+st.header('Line Chart')
+chart_data = pd.DataFrame(
+    np.random.randn(20,3),
+    columns = ['a', 'b', 'c']
+)
+st.line_chart(chart_data)
+st.subheader('Code')
+st.code('''st.header('Line Chart')
+chart_data = pd.DataFrame(
+    np.random.randn(20,3),
+    columns = ['a', 'b', 'c']
+)
+st.line_chart(chart_data)''')
+st.markdown('---')
 
+st.title('Day 5')
+st.header('st.selectbox')
+st.subheader("What we're building?")
+st.write('''A simple app that asks the user what their favorite color is.
 
+Flow of the app:
+
+User selects a color
+App prints out the selected color''')
+
+st.header('st.selectbox')
+option = st.selectbox(
+    'What is your Favourite Color:',
+    ('Blue','Red','Green')
+)
+st.write('My favourite color is :', option)
+st.subheader('Code')
+st.code('''
+st.header('st.selectbox')
+option = st.selectbox(
+    'What is your Favourite Color:',
+    ('Blue','Red','Green')
+)
+st.write('My favourite color is :', option)''')
+st.markdown('---')
+
+st.subheader('Further Reading')
+st.write('''Select widgets can customize how to hide their labels with the label_visibility parameter. If "hidden", the label doesn’t show but there is still empty space for it above the widget (equivalent to label=""). If "collapsed", both the label and the space are removed. Default is "visible". Select widgets can also be disabled with the disabled parameter''')
+
+st.subheader('label_visibility')
+if "visibility" not in st.session_state:
+    st.session_state.visibility = 'visible'
+    st.session_state.disabled = False
+
+col1, col2 = st.columns(2)
+
+with col1:
+    st.checkbox('Disable SelectBox widget.', key='disabled')
+    st.radio(
+        'Set Selectbox label visibilty 👉',
+        key = 'visibility',
+        options=['visible', 'hidden','collapsed'],
+    )
+with col2:
+    option = st.selectbox(
+        'How would you like to be connected?',
+        ("Email",'Phone', 'WhatsApp'),
+        label_visibility=st.session_state.visibility,
+        disabled=st.session_state.disabled,
+    )
+
+st.subheader('Code')
+st.code('''st.subheader('label_visibility')
+if "visibility" not in st.session_state:
+    st.session_state.visibility = 'visible'
+    st.session_state.disabled = False
+
+col1, col2 = st.columns(2)
+
+with col1:
+    st.checkbox('Disable SelectBox widget.', key='disabled')
+    st.radio(
+        'Set Selectbox label visibilty 👉',
+        key = 'visibility',
+        options=['visible', 'hidden','collapsed'],
+    )
+with col2:
+    option = st.selectbox(
+        'How would you like to be connected?',
+        ("Email",'Phone', 'WhatsApp'),
+        label_visibility=st.session_state.visibility,
+        disabled=st.session_state.disabled,
+    )
+''')
+st.markdown('---')
+
+#Day 06
+st.title('Day 06')
+st.header('st.multiselect')
+st.write('st.multiselect displays a multiselect widget.')
+
+options = st.multiselect(
+    'What are your favorite colors',
+    ['Green', 'Yellow', 'Red', 'Blue'],
+    ['Yellow', 'Red']
+)
+st.write('You Selected', options)
+st.subheader('Code')
+st.code('''st.header('st.multiselect')
+st.write('st.multiselect displays a multiselect widget.')
+
+options = st.multiselect(
+    'What are your favorite colors',
+    ['Green', 'Yellow', 'Red', 'Blue'],
+    ['Yellow', 'Red']
+)
+st.write('You Selected', options)''')
+st.markdown('---')
+
+#Day 07
+st.title('Day 07')
+st.header('st.checkbox')
+st.write('st.checkbox displays a checkbox widget.')
+
+st.subheader('CheckBox')
+st.write('What would you like to order?')
+ice_cream = st.checkbox('Ice Cream')
+coffee = st.checkbox('Coffee')
+cola = st.checkbox('Cola')
+
+if ice_cream:
+    st.write("Great! Here's some more 🍦")
+
+if coffee: 
+    st.write("Okay, here's some coffee ☕")
+
+if cola:
+    st.write("Here you go 🥤")
+    
+st.subheader('Code')
+st.code('''st.subheader('CheckBox')
+st.write('What would you like to order?')
+ice_cream = st.checkbox('Ice Cream')
+coffee = st.checkbox('Coffee')
+cola = st.checkbox('Cola')
+
+if ice_cream:
+    st.write("Great! Here's some more 🍦")
+
+if coffee: 
+    st.write("Okay, here's some coffee ☕")
+
+if cola:
+    st.write("Here you go 🥤")
+    
+st.subheader('Code')''')
+st.markdown('---')
 
 #Day 08
-st.title('DAY 8')
+st.title('Day 08')
+st.header('Streamlit Components')
+st.subheader('What Streamlit components are available?')
+st.write('''There are several dozens of Streamlit components featured on Streamlit's website [2].
+
+Fanilo (a Streamlit Creator) curated an amazing list of Streamlit components on a wiki post [3] that lists about 85 Streamlit components as of April 2022.''')
+st.subheader('How to use?')
+st.write('''Streamlit components are just a pip-install away.
+
+In this tutorial, let's get you started in using the streamlit_pandas_profiling component [4].''')
+st.subheader('Install the component')
+st.code('pip install streamlit_pandas_profiling')
+
+
+
+
+
+
+
+
+
+#Day 09
+st.title('DAY 09')
 st.header('st.latex')
 st.subheader('What we are building?')
 st.write('A simple app that shows how to use the st.latex function to render mathematical expressions in Streamlit.')
@@ -155,8 +334,8 @@ st.code('''st.latex(r
 )''')
 st.markdown('---')
 
-#Day 09
-st.title('DAY 9')
+#Day 10
+st.title('DAY 10')
 st.header('Customizing the theme of Streamlit apps')
 st.subheader('What we are building?')
 st.write('A simple app that shows the result of our theme customization. This is made possible by customizing the HTML HEX code inside the `.streamlit/config.toml` file.')
@@ -174,8 +353,8 @@ number = st.sidebar.slider('Pick a number', 0, 100)
 st.write('You selected:', number)
 st.markdown('---')
 
-#Day 10
-st.title('DAY 10')
+#Day 11
+st.title('DAY 11')
 st.header('st.secrets')
 st.write('`st.secrets` allows you to store confidential information such as API keys, database passwords or other credentials.')
 st.write(st.secrets['message'])
@@ -185,8 +364,8 @@ st.code('''st.write(st.secrets['message'])''')
 st.markdown('---')
 
 
-#Day 11
-st.title('DAY 11')
+#Day 12
+st.title('DAY 12')
 st.header('st.file_uploader')
 st.write('''`st.file_uploader` displays a file uploader widget.
 
@@ -209,8 +388,8 @@ st.code('''
 ''')
 st.markdown('---')
 
-#Day 12
-st.title('DAY 12')
+#Day 13
+st.title('DAY 13')
 st.header('How to layout your Streamlit app')
 st.write('''
         In this tutorial, we're going to use the following commands to layout our Streamlit app:
@@ -312,8 +491,8 @@ with col3:
 ''')
 st.markdown('---')
 
-#Day 13
-st.title('DAY 13')
+#Day 14
+st.title('DAY 14')
 st.header('st.progress')
 st.write('`st.progress` displays a progress bar that updates graphically as the iteration progresses.')
 
@@ -345,8 +524,8 @@ st.code('''with st.spinner('Wait for it...'):
   time.sleep(5)''')
 st.markdown('---')
 
-#Day 14
-st.title('DAY 14')
+#Day 15
+st.title('DAY 15')
 st.header('st.form')
 st.write('`st.form` is a way to organize your widgets in a form layout. It allows you to group related widgets together and submit them all at once.')
 st.text('''Forms have a few constraints:
@@ -473,8 +652,8 @@ else:
         ''')
 st.markdown('---')
 
-#Day 15
-st.title('DAY 15')
+#Day 16
+st.title('DAY 16')
 st.header('Build a draggable and resizable dashboard with Streamlit Elements')
 st.subheader('How to use?')
 st.write('**Installation**')
