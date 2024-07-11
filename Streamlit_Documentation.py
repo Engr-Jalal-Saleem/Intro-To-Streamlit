@@ -414,11 +414,11 @@ st.markdown('---')
 st.subheader('st.expander')
 with st.expander('About The Coder!'):
     st.write('''I'm Engr. Jalal Saleem, a passionate student with a kaleidoscope of skills. My journey through tech and design has painted me with a unique blend of analytical precision and creative flair. I don't just crunch data; I turn it into a compass, guiding campaigns to their true north and illuminating the path to informed decisions. As an Electrical Engineering student, I see beyond circuits—I see complex systems that have taught me to untangle even the most knotted problems. I'm not just eager to collaborate; I'm excited to weave my thread into the tapestry of innovative projects that leave a lasting impact. Let's not just innovate—let's create a masterpiece together!''')
-    st.image(
-        r'c:\Users\jalal\Downloads\IMG_3045.jpg',
-        caption='This is Engr. Jalal Saleem, who made this app',
-        use_column_width=True
-    )
+    # st.image(
+    #     r'c:\Users\jalal\Downloads\IMG_3045.jpg',
+    #     caption='This is Engr. Jalal Saleem, who made this app',
+    #     use_column_width=True
+    # )
 
 st.subheader('Code')
 st.code('''
