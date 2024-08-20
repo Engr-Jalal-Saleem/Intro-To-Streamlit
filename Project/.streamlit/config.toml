@@ -1,0 +1,10 @@
+[theme]
+        primaryColor="#E694FF"
+        backgroundColor="rgb(0, 0, 0)"
+        secondaryBackgroundColor="#1E1E1E"
+        textColor="#FFFFFF"
+        font="sans serif"
+        
+[server]
+        address = "192.168.0.121"
+        port = 8500
