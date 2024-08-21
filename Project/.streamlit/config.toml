@@ -4,7 +4,5 @@
         secondaryBackgroundColor="#1E1E1E"
         textColor="#FFFFFF"
         font="sans serif"
-        
-[server]
-        address = "192.168.0.121"
-        port = 8500
+
+
